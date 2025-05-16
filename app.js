@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use('/api', subscriptionRoutes);
 app.use('/api', weatherRoutes);
 
-app.use(express.static(join(__dirname, 'public')));
+app.use(express.static(join(__dirname, 'src', 'public')));
 
 app.get('/', (req, res) => {
   res.sendFile(join(__dirname, 'src', 'public', 'subscribe.html'));
