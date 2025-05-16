@@ -12,7 +12,6 @@ app.use(bodyParser.json());
 
 app.use('/api', subscriptionRoutes);
 app.use('/api', weatherRoutes);
-app.use('/api', migrateRoute);
 
 app.use(express.static(join(__dirname, 'public')));
 
