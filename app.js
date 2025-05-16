@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const subscriptionRoutes = require('./src/api/routes/subscription');
 const weatherRoutes = require('./src/api/routes/weather');
-const migrateRoute = require('./src/api/routes/migrate');
 const {join} = require("node:path");
 
 const app = express();
