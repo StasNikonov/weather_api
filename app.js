@@ -15,7 +15,7 @@ app.use('/api', weatherRoutes);
 app.use(express.static(join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-  res.sendFile(join(__dirname, 'public', 'subscribe.html'));
+  res.sendFile(join(__dirname, 'src', 'public', 'subscribe.html'));
 });
 
 module.exports = app;
