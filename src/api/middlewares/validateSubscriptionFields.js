@@ -1,6 +1,6 @@
 const isValidFields = (email, city, frequency) => {
   if (!email || !city || !frequency) {
-    return { valid: false, message: 'Missing required fields' };
+    return { valid: false, status: 400, message: 'Invalid input' };
   }
   return { valid: true };
 };

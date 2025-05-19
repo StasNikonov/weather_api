@@ -28,7 +28,7 @@ describe('Weather Subscription API', () => {
       });
 
     expect(response.statusCode).toBe(400);
-    expect(response.body.message).toMatch(/invalid email/i);
+    expect(response.body.message).toMatch(/Invalid input/i);
   });
 
   it('should fail with missing required fields', async () => {
@@ -41,7 +41,7 @@ describe('Weather Subscription API', () => {
       });
 
     expect(response.statusCode).toBe(400);
-    expect(response.body.message).toMatch(/Missing required fields/i);
+    expect(response.body.message).toMatch(/Invalid input/i);
   })
 
   it('should fail with invalid city', async () => {
@@ -54,7 +54,7 @@ describe('Weather Subscription API', () => {
       });
 
     expect(response.statusCode).toBe(400);
-    expect(response.body.message).toMatch(/The city was not found. Check the title./i);
+    expect(response.body.message).toMatch(/Invalid input/i);
   })
 
   afterEach(async () => {

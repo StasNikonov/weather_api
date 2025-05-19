@@ -1,12 +1,12 @@
 const {validateCity} = require("./cityValidator");
 const validateWeatherFields = async (city) => {
   if (!city) {
-    return { valid: false, message: 'City parameter is required' };
+    return { valid: false, status: 400, message: 'Invalid request' };
   }
 
   const isCityCorrect = await validateCity(city);
   if (!isCityCorrect) {
-    return { valid: false, message: 'The city was not found. Check the title' };
+    return { valid: false, status: 404, message: 'City not found' };
   }
 
   return { valid: true };

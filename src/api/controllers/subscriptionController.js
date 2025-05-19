@@ -21,7 +21,7 @@ const subscribe = async (req, res) => {
   try {
     const existing = await findSubscription(email, city);
     if (existing) {
-      return res.status(409).json({ message: 'Email already subscribed!' });
+      return res.status(409).json({ message: 'Email already subscribed' });
     }
 
     const token = uuidv4();
@@ -53,7 +53,7 @@ const confirm = async (req, res) => {
     }
 
     await confirmSubscription(subscription);
-    res.status(200).redirect('/subscribe.html?status=confirmed');
+    res.status(200).json({ message: 'Subscription confirmed successfully'});
   } catch (error) {
     res.status(500).json({ message: 'Server error' });
   }
@@ -69,7 +69,7 @@ const unsubscribe = async (req, res) => {
     }
 
     await deleteSubscription(subscription);
-    res.status(200).redirect('/subscribe.html?status=unsubscribed');
+    res.status(200).json({ message: 'Unsubscribed successfully'});
   } catch (error) {
     res.status(500).json({ message: 'Server error' });
   }

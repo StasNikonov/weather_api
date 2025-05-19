@@ -49,14 +49,6 @@
 <p id="message"></p>
 
 <script>
-  const params = new URLSearchParams(window.location.search);
-  const status = params.get('status');
-  if (status === 'confirmed') {
-    alert('✅ Підписку підтверджено!');
-  } else if (status === 'unsubscribed') {
-    alert('❌ Ви відписались.');
-  }
-
   document.getElementById('subscribe-form').addEventListener('submit', async function(e) {
     e.preventDefault();
 
@@ -64,10 +56,17 @@
     const city = document.getElementById('city').value;
     const frequency = document.getElementById('frequency').value;
 
+    const formData = new URLSearchParams();
+    formData.append('email', email);
+    formData.append('city', city);
+    formData.append('frequency', frequency);
+
     const response = await fetch('/api/subscribe', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, city, frequency })
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: formData.toString()
     });
 
     const messageEl = document.getElementById('message');

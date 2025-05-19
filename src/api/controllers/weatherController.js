@@ -6,7 +6,7 @@ const weatherController = async (req, res) => {
 
   const validation = await validateWeatherFields(city)
   if(!validation.valid){
-    return res.status(400).json({ message: validation.message });
+    return res.status(validation.status).json({ message: validation.message });
   }
 
   try{

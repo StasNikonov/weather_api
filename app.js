@@ -1,13 +1,12 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const subscriptionRoutes = require('./src/api/routes/subscription');
 const weatherRoutes = require('./src/api/routes/weather');
 const {join} = require("node:path");
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use('/api', subscriptionRoutes);
 app.use('/api', weatherRoutes);
