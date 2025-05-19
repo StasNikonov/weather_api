@@ -23,8 +23,8 @@ A subscription-based weather notification service. Users can subscribe to receiv
 | Method | Endpoint                     | Description                         |
 | ------ | ---------------------------- | ----------------------------------- |
 | POST   | `/api/subscribe`             | Create new weather subscription     |
-| GET    | `/api/confirm?email=...`     | Confirm a subscriber via email link |
-| GET    | `/api/unsubscribe?email=...` | Cancel an existing subscription     |
+| GET    | `/api/confirm/${token}`     | Confirm a subscriber via email link |
+| GET    | `/api/unsubscribe/${token}` | Cancel an existing subscription     |
 | GET    | `/api/weather`          | Get current weather                 |
 
 ---
