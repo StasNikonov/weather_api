@@ -84,13 +84,13 @@ npx sequelize-cli db:migrate
 ## 🐳 Docker Setup
 ### 1. Build the Docker Image
 ```bash
-docker build -t weather-api
+docker-compose build
 ```
 
 ### 2. Run with Docker Compose
 Make sure your .env file exists in the project root.
 ```bash
-docker-compose up --build
+docker-compose up
 ```
 
 ### 3. Run the Migration Manually (Important)
